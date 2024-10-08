@@ -22,29 +22,41 @@ def kharid_kala():
         else:
             name_vasile.update({kala: hazine})
     return name_vasile
+
+
 list_Kala = kharid_kala()
+
+
 def majmoo_hazine():
     majmoo = 0
     for numbers in list_Kala.values():
         majmoo += numbers
     return majmoo
+
+
 jam_kala = majmoo_hazine()
+
+
 def boodje():
     while True:
-        boodje_karbar = input("Boodje shoma cheghadr ast?")
         try:
-            boodje_karbar = int(boodje_karbar)
+            boodje_karbar = int(input("Boodje shoma cheghadr ast?"))
+            if boodje_karbar > 0:
+                baghi_mande = boodje_karbar - jam_kala
+                if 0 > baghi_mande:
+                    print(f"--------------------\nHazine kala ha : {jam_kala}")
+                    print("Hazine kala ha Bishtar az Boodje shoma hast !")
+                else:
+                    print("shoma mitavanid pardakht konid. :)")
+                    print(f"--------------------\nHazine Kala ha ({jam_kala}) ast ,boodje shoma ({boodje_karbar}) ast ")
+                    print(f"Hazine Baghi mandeh : {baghi_mande}")
+            else:
+                print("adad boodje zir 0 ast!")
+                continue
             break
         except ValueError:
             print("adad sahih vared kon!, dobare emtehan kon.")
             continue
-    baghi_mande = boodje_karbar - jam_kala
-    if 0 > baghi_mande:
-        print(f"--------------------\nHazine kala ha : {jam_kala}")
-        print("Hazine kala ha Bishtar az Boodje shoma hast !")
-    else:
-        print("shoma mitavanid pardakht konid. :)")
-        print(f"--------------------\nHazine Kala ha ({jam_kala}) ast ,boodje shoma ({boodje_karbar}) ast ")
-        print(f"Hazine Baghi mandeh : {baghi_mande}")
     return
+
 boodje()

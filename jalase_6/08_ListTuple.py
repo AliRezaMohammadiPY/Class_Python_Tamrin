@@ -4,7 +4,14 @@ print("------------------------------------------\n"
       "\n------------------------------------------")
 
 list_tuples = []
-tedad_tuple = int(input("Tedad tuple haye khod ra vared konid : "))
+while True:
+    tedad_tuple = input("Tedad tuple haye khod ra vared konid : ")
+    try:
+        tedad_tuple = int(tedad_tuple)
+    except ValueError:
+        print("adad sahih vared konid!")
+        continue
+    break
 for ch in range(tedad_tuple):
     tuples = input("Tuple Ra vared konid : ")
     tuple_list = lambda tup:tuples.split()
@@ -18,5 +25,4 @@ for ch in range(tedad_tuple):
         tuple_kon = lambda tuplekon:tuple(tuples)
         tuples = tuple_kon(tuples)
         list_tuples.append(tuples[1])
-
 print(list_tuples)

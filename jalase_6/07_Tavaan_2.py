@@ -8,11 +8,17 @@ list_num = []
 while True:
     voroodi = input("adad ra vared konid: ")
     if voroodi == "end":
+        if list_num == []:
+            print("hich adadi vared nashode!")
+            continue
         break
     else:
-        voroodi = int(voroodi)
-        list_num.append(voroodi)
-        tavaan(voroodi)
-        output = map(tavaan, list_num)
-output = list(output)
+        try:
+            voroodi = int(voroodi)
+            list_num.append(voroodi)
+            tavaan(voroodi)
+            output = map(tavaan, list_num)
+            output = list(output)
+        except ValueError:
+            print("adad sahih vared konid!")
 print(f"Javab Tavaan 2 haye Shoma : {output}")

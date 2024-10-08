@@ -5,10 +5,14 @@ def mohit_masahat():
             arz = int(input("arz ra vared konid : "))
         except ValueError:
             print("adad sahih vared konid!")
+        if tool < 0 or arz < 0:
+            print("adad zir 0 ast")
             continue
-        print("---------------------------------------\nmohit mostatil =", (tool + arz) * 2)
-        print("masahat mostatil =", tool * arz)
-        break
+        if tool < arz:
+            print("mage mishe arz bishtar az tool?")
+            continue
+        else:
+            print("---------------------------------------\nmohit mostatil =", (tool + arz) * 2)
+            print("masahat mostatil =", tool * arz)
     return
 mohit_masahat()
-print("------------------------------------------\nrooz khoobi dashte bashid khodahafez :)")
