@@ -1,3 +1,6 @@
+print("addres file .txt ra dar ghesmat paeen bayad vared konid.")
+print("-" * 40)
+
 index_text = input("address file .txt ra vared konid : ")
 with open(index_text, "r", encoding='utf-8') as file_txt:
     content = file_txt.read()
@@ -30,7 +33,7 @@ def Kalame_Yaab(matn, kalame):
 kalame_yaab = input("kalame morede nazar ra vared konid : ")
 output = Kalame_Yaab(content, kalame_yaab)
 
-with open("Class_Python/My_File/report.txt", "w", encoding='utf-8') as report:
+with open("report.txt", "w", encoding='utf-8') as report:
     report.write("-" * 40)
     report.write("\n"
                  f"tadad kalamat : {kalame_shomar(content)}"
@@ -45,7 +48,7 @@ with open("Class_Python/My_File/report.txt", "w", encoding='utf-8') as report:
                      "\n")
     report.write("-" * 40)
 
-with open("Class_Python/My_File/report.txt", "r", encoding='utf-8') as report1:
+with open("report.txt", "r", encoding='utf-8') as report1:
     print(report1.read())
 
 # kalame_kon = content.split(kalame_yaab)
