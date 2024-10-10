@@ -34,11 +34,18 @@ def Kalame_Yaab(matn, kalame):
     kalame_kon = matn.split()
     for ch in kalame:
         Number_kalame_yaab = kalame_kon.count(kalame)
-
     return Number_kalame_yaab
+
 print("kalame iy ke mikhahid dar matn peyda konid ra dar paeen vared konid.")
 print("~" * 40)
-kalame_yaab = input("kalame morede nazar ra vared konid : ")
+while True:
+    kalame_yaab = input("kalame morede nazar ra vared konid : ")
+    kalame_kon2 = kalame_yaab.split()
+    if len(kalame_kon2) >= 2:
+        print("faghar yek kalame vared konid!")
+        continue
+    else:
+        break
 
 output = Kalame_Yaab(content, kalame_yaab)
 
