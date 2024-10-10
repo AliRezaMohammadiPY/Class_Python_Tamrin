@@ -1,10 +1,16 @@
 print("addres file .txt ra dar ghesmat paeen bayad vared konid.")
-print("-" * 40)
+print("~" * 40)
 
-index_text = input("address file .txt ra vared konid : ")
-with open(index_text, "r", encoding='utf-8') as file_txt:
-    content = file_txt.read()
-print("-" * 40)
+while True:
+    index_text = input("address file ra vared konid : ")
+    try:
+        with open(index_text, "r", encoding='utf-8') as file_txt:
+            content = file_txt.read()
+            break
+    except FileNotFoundError:
+        print("[ lotfan addres file ra vared konid ! ]")
+        continue
+print("=-" * 30 + "=")
 def kalame_shomar(matn):
     kalamat = 0
     kalame_kon = matn.split()
@@ -30,11 +36,14 @@ def Kalame_Yaab(matn, kalame):
         Number_kalame_yaab = kalame_kon.count(kalame)
 
     return Number_kalame_yaab
+print("kalame iy ke mikhahid dar matn peyda konid ra dar paeen vared konid.")
+print("~" * 40)
 kalame_yaab = input("kalame morede nazar ra vared konid : ")
+
 output = Kalame_Yaab(content, kalame_yaab)
 
 with open("report.txt", "w", encoding='utf-8') as report:
-    report.write("-" * 40)
+    report.write("=" * 40)
     report.write("\n"
                  f"tadad kalamat : {kalame_shomar(content)}"
                  "\n"
@@ -46,7 +55,7 @@ with open("report.txt", "w", encoding='utf-8') as report:
     else:
         report.write(f"Tedad Kalame morede nazar : {Kalame_Yaab(content, kalame_yaab)}"
                      "\n")
-    report.write("-" * 40)
+    report.write("=" * 40)
 
 with open("report.txt", "r", encoding='utf-8') as report1:
     print(report1.read())
