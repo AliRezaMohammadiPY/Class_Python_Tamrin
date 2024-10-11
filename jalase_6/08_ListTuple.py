@@ -1,7 +1,7 @@
-print("------------------------------------------\n"
-      "! Tavajoh: !"
-      "\nFaghat Ozv ra vared konid va ba fasele joda konid."
-      "\n------------------------------------------")
+print("-" * 55)
+print("! Tavajoh: !"
+      "\n\tFaghat Ozv ra vared konid va ba fasele joda konid.")
+print("-" * 55)
 
 list_tuples = []
 while True:
@@ -21,6 +21,7 @@ for ch in range(tedad_tuple):
         break
     if len(tuples) > 2:
         print("Error! Tuple az 2 ozv bishtar ast. (Please Try Again)")
+        break
     else:
         tuple_kon = lambda tuplekon:tuple(tuples)
         tuples = tuple_kon(tuples)

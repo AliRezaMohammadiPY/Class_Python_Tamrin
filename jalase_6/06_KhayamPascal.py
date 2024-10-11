@@ -1,6 +1,9 @@
 while True:
     try:
         number = int(input("yek adad vared konid : "))
+        if number <= 0:
+            print("adad zir 0 ast!, Please Try Again")
+            continue
         break
     except ValueError:
         print("adad sahih vared konid!")
