@@ -17,6 +17,7 @@ if joda[-1] == "csv":
             print(f"-" * 17)
             print(f"\t {majmoo}")
             print("=-" * 10)
+            print(f"majmoo ghaymat ha : {majmoo}")
     except FileNotFoundError:
         print("-" * 40)
         print("Error!\nFile peyda nashod !, [ Please Try Again ]")
