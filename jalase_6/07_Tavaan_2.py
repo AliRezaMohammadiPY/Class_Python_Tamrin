@@ -1,24 +1,23 @@
-print("-----------------------------------------")
-print("agar benvisid 'end' barname be shoma adad haii ke dadid ra tavaan 2 midahad.")
-print("-----------------------------------------")
+tavaan = lambda number: number ** 2
 
-tavaan = lambda num:num ** 2
 
+voroodi = input("List adad ra vared konid : ")
+voroodi = voroodi.split(",")
 list_num = []
-while True:
-    voroodi = input("adad ra vared konid: ")
-    if voroodi == "end":
-        if list_num == []:
-            print("hich adadi vared nashode!")
-            continue
-        break
-    else:
-        try:
-            voroodi = int(voroodi)
-            list_num.append(voroodi)
-            tavaan(voroodi)
-            output = map(tavaan, list_num)
-            output = list(output)
-        except ValueError:
-            print("adad sahih vared konid!")
-print(f"Javab Tavaan 2 haye Shoma : {output}")
+for char in voroodi:
+    char = char.replace('[', '')
+    char = char.replace(']', '')
+    char = char.strip()
+    list_num.append(char)
+
+try:
+    list_num = map(int, list_num)
+    output = map(tavaan, list_num)
+    print("=-" * 20)
+    print(f"Javab Tavaan 2 haye Shoma : {list(output)}")
+    print("=-" * 20)
+
+except ValueError:
+    print("*" * 40)
+    print("Error!\nlotfan adad sahih vared konid!\n\n[Please try Again]")
+    print("*" * 40)
