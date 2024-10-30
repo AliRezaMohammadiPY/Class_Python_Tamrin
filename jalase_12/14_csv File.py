@@ -11,8 +11,8 @@ if joda[-1] == "csv":
             print("=-" * 10)
             print("gheymat ha :")
             for row in reader:
-                print(f"\t+ {row[3]}")
-                row = float(row[3])
+                print(f"\t+ {row[-1]}")
+                row = float(row[-1])
                 majmoo += row
             print(f"-" * 17)
             print(f"\t {majmoo}")
