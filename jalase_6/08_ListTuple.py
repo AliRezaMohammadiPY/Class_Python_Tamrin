@@ -13,17 +13,31 @@ while True:
         continue
     break
 for ch in range(tedad_tuple):
+    tuple_bardaar = []
     tuples = input("Tuple Ra vared konid : ")
-    tuple_list = lambda tup: tuples.split()
+    tuple_list = lambda tup: tuples.split(",")
     tuples = tuple_list(tuples)
-    if len(tuples) < 2:
+    for char in tuples:
+        char = char.replace("(", "")
+        char = char.replace(")", "")
+        char = char.replace(" ", "")
+        tuple_bardaar.append(char)
+    try:
+        int_kon = list(map(int, tuple_bardaar))
+    except ValueError:
+        print("adad sahih vared konid! (Please Try Again)")
+        break
+    if len(tuple_bardaar) < 2:
         print("Error! Tuple az 2 ozv kamtar ast. (Please Try Again)")
         break
-    if len(tuples) > 2:
+    if len(tuple_bardaar) > 2:
         print("Error! Tuple az 2 ozv bishtar ast. (Please Try Again)")
         break
     else:
-        tuple_kon = lambda tuplekon: tuple(tuples)
-        tuples = tuple_kon(tuples)
-        list_tuples.append(tuples[1])
-print(list_tuples)
+        list_tuples.append(int_kon[-1])
+if len(list_tuples) == 0:
+    print("-" * 30)
+    print(f"list moratab shode ba ozv dovom : list khali ast")
+else:
+    print("-" * 30)
+    print(f"list moratab shode ba ozv dovom : {list_tuples}")
