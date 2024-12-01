@@ -12,6 +12,7 @@ while True:
         continue
     if hads == number:
         print("------------------------------------------------------\nTabrik migam dorost hads zadi :)")
+        print(f"adad : {number}")
         break
     elif hads >= number:
         print("adad koochek tar ast.")
