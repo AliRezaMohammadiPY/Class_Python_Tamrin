@@ -13,7 +13,7 @@ def Menha(num1, num2):
 
 def zarb(num1, num2):
     print("=-" * 20)
-    return f"{num1} * {num2} = {num1 * num2}"
+    return f"{num1} x {num2} = {num1 * num2}"
 
 
 def Taghsim(num1, num2):
@@ -36,7 +36,6 @@ def Radical(num1):
 
 
 def Ghadre_Motlagh(num1):
-    list1 = []
     print("=-" * 20)
     num = str(num1)
     if num[0] == "-":
@@ -61,9 +60,10 @@ if __name__ == '__main__':
                 print("Adad sahih vared konid ! [Please Try Again]")
                 continue
 
-        question = input("+ , - , * , / , ^ , V , % , || : ")
+        question = input("+ , - , x , / , ^ , V , % , || : ")
 
-        if question == "+" or question == "=" or question == "-" or question == "*" or question == "8" or question == "/" or question == "^" or question == "6" or question == "%" or question == "5":
+        if (question == "+" or question == "=" or question == "-" or question == "x" or question == "8" or
+                question == "/" or question == "^" or question == "6" or question == "%" or question == "5"):
             while True:
                 try:
                     number2 = int(input("Lotfan adad dovom ra vared konid : "))
@@ -80,7 +80,7 @@ if __name__ == '__main__':
             menha = Menha(number1, number2)
             print(menha)
 
-        elif question == "*" or question == "8":
+        elif question == "x" or question == "8":
             zarb = zarb(number1, number2)
             print(zarb)
 
@@ -115,14 +115,14 @@ if __name__ == '__main__':
                  "Badan mibinamet ;)",
                  "Bye bye :D",
                  "Dobare biai ha (^_^)"}
-        if question == "y" or question == "Y":
+        if question.lower() == "y":
             continue
-        elif question == "n" or question == "N":
+        elif question.lower() == "n":
             for item in javab:
                 a = item
             print("-" * 40)
             print(a)
             break
         else:
-            print("What ?")
+            print("Lotfan ya [ y ] ya [ n ] ra vared konid !")
             break
